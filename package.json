@@ -1,0 +1,43 @@
+{
+  "name": "@meshfrontlab/envguard",
+  "version": "0.1.0",
+  "description": "Check your .env file against .env.example: missing variables, wrong types and accidental commits. Zero dependencies.",
+  "type": "module",
+  "bin": {
+    "envguard": "bin/envguard.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    "environment-variables",
+    "validation",
+    "config",
+    "schema",
+    "cli",
+    "ci"
+  ],
+  "author": "MESHFRONT LTD",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeshFrontLab/envguard.git"
+  },
+  "homepage": "https://github.com/MeshFrontLab/envguard#readme",
+  "bugs": "https://github.com/MeshFrontLab/envguard/issues"
+}
