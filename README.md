@@ -19,13 +19,20 @@ Requires [Node.js](https://nodejs.org) 22 or newer.
 
 ```sh
 # run once, without installing
-npx github:MeshFrontLab/envguard
+npx --allow-git=all github:MeshFrontLab/envguard
 
 # or install the `envguard` command globally
-npm install -g github:MeshFrontLab/envguard
+npm install -g --allow-git=all github:MeshFrontLab/envguard
 
 # or add it to a project
-npm install --save-dev github:MeshFrontLab/envguard
+npm install --save-dev --allow-git=all github:MeshFrontLab/envguard
+```
+
+`--allow-git=all` is needed on npm 12 and newer, which blocks installing straight from GitHub unless you allow it. Older npm versions accept it too. Prefer not to use it? Clone and install from the folder instead:
+
+```sh
+git clone https://github.com/MeshFrontLab/envguard
+npm install -g ./envguard
 ```
 
 ## Usage
@@ -103,7 +110,7 @@ GitHub Actions example:
 - uses: actions/setup-node@v5
   with:
     node-version: 22
-- run: npx --yes github:MeshFrontLab/envguard --process
+- run: npx --yes --allow-git=all github:MeshFrontLab/envguard --process
   env:
     DATABASE_URL: ${{ secrets.DATABASE_URL }}
     PORT: 8080
